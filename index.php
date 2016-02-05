@@ -5,6 +5,7 @@
 		<title>MyNy</title>
 	</head>
 	<body>
-		<h1>MyYelp, NOT YOURS!!!</h1>
+		<h1>MyYelp</h1>
+		<h2>NOT F***N YOURS!</h2>
 	</body>
 </html>
