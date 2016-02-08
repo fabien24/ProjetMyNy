@@ -5,4 +5,3 @@
 	} catch (PDOException $e) {
 		exit('Database connection failed');
 	}
-	var_dump($pdo);
