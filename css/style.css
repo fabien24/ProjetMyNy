@@ -19,8 +19,10 @@ body {
 }
 
 header {
-	margin: 0 auto;
-	max-width: 960px;
+    height: 100px;
+    margin: 0 auto;
+    max-width: 960px;
+    border-bottom: 1px solid grey;
 }
 
 nav {
@@ -36,11 +38,22 @@ main {
 	margin: 0 auto;
 	padding-left: 1rem;
 	padding-right: 1rem;
-	background-color: rgba(255,255,255,0.8);
+/*	background-color: rgba(255,255,255,0.8);*/
+}
+
+object {
+	border-radius: 10px;
+	width: 400px;
+	height: 400px;
+	border: 10px solid #FFF;
 }
 
 a {
 	text-decoration: none;
+}
+
+label {
+	display: block;
 }
 
 /* ID's */
@@ -70,8 +83,17 @@ a {
 }
 
 #login {
-	color: #fff;
-	float: right;
+	margin-top: 10px;
+	font-size: 0.9rem;
+	font-weight: 700;
+    clear: right;
+    color: #4e4e4e;
+    float: right;
+    text-align: right;
+}
+
+#login li {
+	display: inline-block;
 }
 
 /* CLASSES  */
@@ -90,8 +112,16 @@ a {
 }
 
 .rating {
-	font-weight: 700;
-	color: orange;
+	border: 3px solid white;
+    margin-right: 20px;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 25px;
+    background-color: #000;
+    font-weight: 700;
+    line-height: 35px;
+    color: orange;
 }
 
 .type {
