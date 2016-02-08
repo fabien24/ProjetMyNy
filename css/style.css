@@ -1,0 +1,44 @@
+/* FONTS */
+@import url(https://fonts.googleapis.com/css?family=Righteous);
+
+/* TAGS */
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	background-color: #FFF;
+}
+
+header {
+	margin: 0 auto;
+	max-width: 960px;
+}
+
+nav {
+	float: right;
+}
+
+nav li {
+	display: inline-block;
+}
+
+a {
+	text-decoration: none;
+}
+
+
+
+
+
+/* ID's */
+
+#branding {
+	font-family: 'Righteous', cursive;
+}
+
+
+
