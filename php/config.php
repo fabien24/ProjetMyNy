@@ -9,8 +9,10 @@
 
 //fonction pour écrire dans le fichier log
     function writeLog($message){
+        $time = date('d/m/Y, H:i:s').' =>';
         $log = fopen('log.txt', 'a');
         if ($log) {
+            fwrite($log, $time.PHP_EOL);
             fwrite($log, $message.PHP_EOL);
             fclose($log);
         }

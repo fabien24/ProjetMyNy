@@ -51,7 +51,6 @@ if (!empty($_POST)) {
                     //changement du mot de passe enregistré dans le log
                     $time = date('d/m/Y, H:i:s').' =>';
                     $message = 'The user '.$userEmail.' entered a new password ang got his token removed';
-                    writeLog($time);
                     writeLog($message);
                     $_SESSION['password'] = $securePassword;
                     header('Location: index.php');
