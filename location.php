@@ -13,18 +13,20 @@
 		$stmt->bindValue(':id', $id, PDO::PARAM_INT);
 		if ($stmt->execute()) {
 			$location = $stmt->fetch();
-			?><div class="rating"><?= $location['sit_rating']; ?></div>
-			<h1><?= $location['sit_name']; ?></h1>
+			?><h1 class="loc"><?= $location['sit_name']; ?></h1>
+			<div class="rating"><?= $location['sit_rating']; ?></div>
 			<div class="type"><?= $location['typ_name']; ?></div>
 			<object data="<?= $location['sit_image_path']; ?>"></object>
-			<div class="description"><?= $location['sit_description']; ?></div>
-			<address>
-				<?= $location['sit_address']; ?><br/>
-				<?= $location['sit_postal_code']; ?> <?= $location['sit_city']; ?>
-			</address>
-			<a href="mailto:<?= $location['sit_email'];?>"><?= $location['sit_email'];?></a>
-			<a href="tel:<?= str_replace(' ', '', $location['sit_phone']); ?>"><?= $location['sit_phone']; ?></a>
-			<div class="date-added"><?= $location['sit_date_added'];?></div>
+			<div class="locContent">
+				<div class="description"><?= $location['sit_description']; ?></div>
+				<address>
+					<?= $location['sit_address']; ?><br/>
+					<?= $location['sit_postal_code']; ?> <?= $location['sit_city']; ?>
+				</address>
+				<a href="mailto:<?= $location['sit_email'];?>"><?= $location['sit_email'];?></a>
+				<a href="tel:<?= str_replace(' ', '', $location['sit_phone']); ?>"><?= $location['sit_phone']; ?></a>
+				<div class="date-added"><?= $location['sit_date_added'];?></div>
+			</div>
 			<div class="map"></div>
 			<script src="https://maps.google.com/maps/api/js"></script>
 			<script>

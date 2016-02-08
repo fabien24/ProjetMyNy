@@ -31,7 +31,18 @@ nav {
 }
 
 nav li {
-	display: inline-block;
+	margin-right: 5px;
+    padding-right: 10px;
+    border-right: 1px dotted grey;
+    display: inline-block;
+}
+
+nav a {
+	color: orange;
+}
+
+nav a:hover {
+	color: #FFF;
 }
 
 main {
@@ -43,6 +54,9 @@ main {
 }
 
 object {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	float: left;
 	border-radius: 10px;
 	width: 400px;
 	height: 400px;
@@ -55,6 +69,11 @@ a {
 
 label {
 	display: block;
+}
+
+address {
+	margin-top: 10px;
+	margin-bottom: 10px;
 }
 
 /* ID's */
@@ -84,7 +103,10 @@ label {
 }
 
 #login {
-	margin-top: 10px;
+	margin-right: 5px;
+	width: 80%;
+	height: 45px;
+	margin-top: 15px;
 	font-size: 0.9rem;
 	font-weight: 700;
     clear: right;
@@ -113,6 +135,7 @@ label {
 }
 
 .rating {
+	display: inline-block;
 	border: 3px solid white;
     margin-right: 20px;
     text-align: center;
@@ -126,5 +149,35 @@ label {
 }
 
 .type {
+	font-style: italic;
+	color: orange;
 	font-size: 1.2rem; 
+}
+
+.loc {
+	display: inline-block;
+	margin-top: 10px;
+}
+
+.locContent {
+	text-align: justify;
+	padding: 20px;
+	margin-top: 10px;
+	margin-left: 10px;
+	color: #000;
+	width: 518px;
+	min-height: 400px;
+	border-radius: 10px;
+	background-color: #fff;
+	display: inline-block;
+	border: 10px solid #fff;
+}
+
+.description{
+	min-height: 250px;
+}
+
+.date-added {
+	font-size: 0.7rem;
+	color: grey;
 }
