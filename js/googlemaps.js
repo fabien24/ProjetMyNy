@@ -2,12 +2,14 @@
 
 function initGoogleMap(){
 	// requires 3 variables to be set before calling: sitLatitude, sitLongitude, sitName
+	var mapContainer = document.querySelector(".map");
+	mapContainer.style.display = "block"; // the mapContainer stays hidden when JS is disabled
 	var options = {
 		zoom: 17,
 		center: new google.maps.LatLng(sitLatitude, sitLongitude),
 		mapTypeId: google.maps.MapTypeId.HYBRID
 	};
-	var map = new google.maps.Map(document.querySelector(".map"), options);
+	var map = new google.maps.Map(mapContainer, options);
 	var marker = new google.maps.Marker({
 		map: map,
 		position: new google.maps.LatLng(sitLatitude, sitLongitude)
