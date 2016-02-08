@@ -1,5 +1,5 @@
 <?php
-
+	require_once 'php/config.php';
 	require_once 'php/header.php';
 ?>
 
@@ -19,7 +19,6 @@
 
 <?php
 	require_once 'php/footer.php';
-	require_once 'php/config.php';
 ?>
 
 
