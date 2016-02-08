@@ -26,8 +26,8 @@
 				<!-- menu shows only for admin -->
 				<nav id="menu">
 					<ul>
-						<li><a href="../editlocation.php">locations</a></li>
-						<li><a href="../edituser.php">users</a></li>
+						<li><a href="editlocation.php">locations</a></li>
+						<li><a href="edituser.php">users</a></li>
 					</ul>
 				</nav>
 			</header>

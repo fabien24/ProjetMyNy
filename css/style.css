@@ -148,10 +148,9 @@ footer {
 }
 
 .rating {
-	display: inline-block;
     text-align: center;
     width: 180px;
-    height: 40px;
+    height: 30px;
     background-image: url('../img/stars.png');
     background-repeat: no-repeat;
 }
