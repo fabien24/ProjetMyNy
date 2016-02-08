@@ -11,8 +11,11 @@
 
 
 body {
+	font-family: verdana;
 	font-size: 1rem;
-	background-color: #FFF;
+/*	background-image: url("https://newevolutiondesigns.com/images/freebies/black-wallpaper-28.jpg");*/
+	background-repeat: no-repeat;
+	background-color: #000;
 }
 
 header {
@@ -26,6 +29,14 @@ nav {
 
 nav li {
 	display: inline-block;
+}
+
+main {
+	max-width: 960px;
+	margin: 0 auto;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	background-color: rgba(255,255,255,0.8);
 }
 
 a {
@@ -58,5 +69,31 @@ a {
 	color: grey;
 }
 
+#login {
+	color: #fff;
+	float: right;
+}
 
+/* CLASSES  */
 
+/* map display single location */
+.map {
+	border: 10px solid #fff;
+	border-radius: 10px;
+	height: 300px; 
+	width: 930px; 
+	display: block; 
+	position: relative; 
+	overflow: hidden; 
+	transform: translateZ(0px); 
+	background-color: rgb(229, 227, 223);
+}
+
+.rating {
+	font-weight: 700;
+	color: orange;
+}
+
+.type {
+	font-size: 1.2rem; 
+}

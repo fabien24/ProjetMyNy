@@ -25,7 +25,7 @@
 			<div class="date-added"><?= $location['sit_date_added'];?></div>
 			<div class="description"><?= $location['sit_description']; ?></div>
 			<object data="<?= $location['sit_image_path']; ?>"></object>
-			<div class="map" style="height: 300px; width: 300px;"></div>
+			<div class="map"></div>
 			<script src="https://maps.google.com/maps/api/js"></script>
 			<script>
 				"use strict";
