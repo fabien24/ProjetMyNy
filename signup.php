@@ -50,7 +50,7 @@ if (!empty($_POST)) {
                 if ($pdoStatement -> execute() && $pdoStatement -> rowCount() > 0) {
                     //changement du mot de passe enregistré dans le log
                     $time = date('d/m/Y, H:i:s').' =>';
-                    $message = 'The user '.$userEmail.' entered a new password ang got his token removed';
+                    $message = 'The user '.$userEmail.' entered a new password and got his token removed';
                     writeLog($message);
                     $_SESSION['password'] = $securePassword;
                     header('Location: index.php');
