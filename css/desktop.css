@@ -1,0 +1,12 @@
+/* desktop test */
+
+body {
+	background-color: green;
+}
+
+/* desktop css */
+
+#headerMax {
+	width: 100%;
+	background-color: #000;
+}
