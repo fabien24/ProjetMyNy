@@ -1,7 +1,11 @@
 <?php
 	require_once 'php/config.php';
+	require_once 'php/loginphp.php';
 	require_once 'php/header.php';
 ?>
+<?php if (!$logged) {
+        require_once 'php/loginhtml.php';
+} else {?>
 
 			<!-- Google Map api -->
 			<section id="map">
@@ -16,7 +20,7 @@
 			<section id="locations">
 				
 			</section>
-
+<?php } ?>
 <?php
 	require_once 'php/footer.php';
 ?>
