@@ -9,7 +9,8 @@
 		$stmt = $pdo->prepare('SELECT sit_name, sit_address, sit_postal_code, sit_city, sit_description, sit_image_path, sit_longitude, sit_latitude, ROUND((5*sit_rating5+4*sit_rating4+3*sit_rating3+2*sit_rating2+sit_rating1)/(sit_rating5+sit_rating4+sit_rating3+sit_rating2+sit_rating1),1) AS sit_rating, sit_phone, sit_email, sit_date_added, typ_name
 			FROM site INNER JOIN type
 			ON site.typ_id = type.typ_id
-			WHERE sit_id = :id');
+			WHERE sit_id = :id
+			LIMIT 1');
 		$stmt->bindValue(':id', $id, PDO::PARAM_INT);
 		if ($stmt->execute()) {
 			$location = $stmt->fetch();
