@@ -108,7 +108,8 @@ footer {
 }
 
 #branding {
-	background-image: url('../img/skeleton.png');
+	height: 90px;
+	background-image: url('../img/logoStar.png');
 	background-repeat: no-repeat;
 	background-position: left center;
 	float: left;
@@ -179,7 +180,7 @@ footer {
 .map {
 	border: 10px solid #fff;
 	border-radius: 10px;
-	height: 300px; 
+	height: 400px; 
 	width: 930px; 
 	display: block; 
 	position: relative; 
