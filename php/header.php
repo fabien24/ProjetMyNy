@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+<<<<<<< HEAD
 		<meta charset="UTF-8"/>
 		<title>MyNy</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
@@ -33,3 +34,10 @@
 			</header>
 		</div>
 		<main>
+=======
+		<meta charset="UTF-8" />
+		<title>MyNy</title>
+	</head>
+	<body>
+	<?php
+>>>>>>> origin/master
