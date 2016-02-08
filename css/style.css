@@ -14,7 +14,8 @@ body {
 	color: #FFF;
 	font-family: verdana;
 	font-size: 1rem;
-/*	background-image: url("https://newevolutiondesigns.com/images/freebies/black-wallpaper-28.jpg");*/
+	background-image: url('../img/bgBody.jpg');
+	background-position: center;
 	background-repeat: no-repeat;
 	background-color: #000;
 }
@@ -50,7 +51,7 @@ main {
 	margin: 0 auto;
 	padding-left: 1rem;
 	padding-right: 1rem;
-/*	background-color: rgba(255,255,255,0.8);*/
+	/*	background-color: rgba(255,255,255,0.8);*/
 }
 
 object {
@@ -77,15 +78,20 @@ address {
 }
 
 footer {
+	color: grey;
+	text-align: center;
 	height: 100px;
     margin: 0 auto;
+    margin-top: 30px;
     max-width: 960px;
-    border-top: 1px solid grey;
+    padding: 15px;
+
 }
 
 /* ID's */
 
 #headerMax {
+	border-bottom: 1px solid grey;
 	height: 100px;
 	width: 100%;
 	background-color: #000;
@@ -143,16 +149,11 @@ footer {
 
 .rating {
 	display: inline-block;
-	border: 3px solid white;
-    margin-right: 20px;
     text-align: center;
-    width: 40px;
+    width: 180px;
     height: 40px;
-    border-radius: 25px;
-    background-color: #000;
-    font-weight: 700;
-    line-height: 35px;
-    color: orange;
+    background-image: url('../img/stars.png');
+    background-repeat: no-repeat;
 }
 
 .type {
@@ -162,6 +163,7 @@ footer {
 }
 
 .loc {
+	font-style: italic;
 	display: inline-block;
 	margin-top: 10px;
 }
