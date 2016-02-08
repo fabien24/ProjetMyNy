@@ -1,5 +1,9 @@
 /* Test mobile */
 
-body {
-	background-color: blue;
+@media (min-width: 520px) {
+
+	body {
+		background-color: blue;
+	}
+
 }

@@ -9,7 +9,9 @@
 	box-sizing: border-box;
 }
 
+
 body {
+	font-size: 1rem;
 	background-color: #FFF;
 }
 
@@ -30,14 +32,30 @@ a {
 	text-decoration: none;
 }
 
-
-
-
-
 /* ID's */
 
+#headerMax {
+	height: 100px;
+	width: 100%;
+	background-color: #000;
+}
+
 #branding {
+	float: left;
+	color: #fff;
+	max-width: 200px;
 	font-family: 'Righteous', cursive;
+	font-size: 1.5rem;
+	padding-top: 1rem;
+	padding-left: 1rem;
+}
+
+#branding a {
+	color: #fff;
+}
+
+#branding a:hover {
+	color: grey;
 }
 
 

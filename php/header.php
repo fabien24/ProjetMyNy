@@ -5,7 +5,7 @@
 		<title>MyNy</title>
 		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<!-- Define Max and min width for devices -->
-		<link rel="stylesheet" media="screen and (max-width: 600px)" href="css/mobile.css" type="text/css" />
+		<link rel="stylesheet" media="screen and (max-width: 320px)" href="css/mobile.css" type="text/css" />
 		<link rel="stylesheet" media="screen and (min-width: 960px)" href="css/desktop.css" type="text/css" />
 	</head>
 		<body>

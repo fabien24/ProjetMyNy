@@ -1,12 +1,13 @@
 /* desktop test */
 
-body {
-	background-color: green;
-}
+@media (min-width: 960px) {
 
-/* desktop css */
+	body {
+		background-color: green;
+	}
 
-#headerMax {
-	width: 100%;
-	background-color: #000;
+	/* desktop css */
+
+
+
 }
