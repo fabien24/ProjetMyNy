@@ -1,5 +1,6 @@
 <?php
 require_once 'php/config.php';
+require_once 'php/loginphp.php';
 $userMail = '
     SELECT usr_email FROM user 
 ';
