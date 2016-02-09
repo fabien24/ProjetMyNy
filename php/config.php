@@ -37,3 +37,29 @@
         }
         return false;
     }
+
+//fonction pour envoyer le mail
+    function autoMail($to, $messsageHTML, $messageText) {
+        require_once 'PHPMailer/PHPMailerAutoload.php';
+
+        $mail = new PHPMailer;
+
+        $mail->isSMTP();
+        $mail->Host = 'smtp.live.com';  
+        $mail->SMTPAuth = true;                              
+        $mail->Username = 'myny_projet@hotmail.com';                
+        $mail->Password = file_get_contents('../mynydba/password.txt'); 
+        $mail->SMTPSecure = 'tls';
+        $mail->Port = 25;                                   
+
+        $mail->setFrom('myny_projet@hotmail.com', 'MyNy support');
+        $mail->addAddress($to);
+
+        $mail->isHTML(true);                                  
+
+        $mail->Subject = 'Password at MyNy';
+        $mail->Body    = $messsageHTML;
+        $mail->AltBody = $messageText;
+
+        return $mail->send();
+    }
