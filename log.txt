@@ -1,6 +1,0 @@
-09/02/2016, 11:22:13 =>
-The user renaud.ialacci@gmail.com entered a new password and got his token removed
-09/02/2016, 14:16:09 =>
-The user claudemarson@hotmail.com entered a new password and got his token removed
-09/02/2016, 14:18:37 =>
-The user claudemarson@hotmail.com entered a new password and got his token removed
