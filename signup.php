@@ -120,7 +120,7 @@ if (!empty($_POST)) {
         <div class="error">
             <img src="img/homer.png" />
             <h1>SOMETHING WENT WRONG</h1>
-            <p>Your link is defect please contact the <a href="administratorsmail">administrator</a> to get a new one.</p>
+            <p>Your link is defect please contact the <a href="mailto:administratorsmail">administrator</a> to get a new one.</p>
         </div>
 <?php
         }

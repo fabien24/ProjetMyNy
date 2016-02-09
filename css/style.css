@@ -231,13 +231,20 @@ section {
 	height: 28px;
 }
 
+#addScreen select {
+	background-color: orange;
+}
+
 #addScreen textarea {
+	margin-top: 10px;
 	width: 250px;
 	max-height: 300px;
 	min-height: 100px;
+	resize: vertical;
 }
 
 #addScreen span {
+	vertical-align: top;
 	text-align: left;
 	display: inline-block;
 	width: 150px;
@@ -246,6 +253,14 @@ section {
 #addScreen h1 {
 	font-size: 1.6rem;
 }
+
+#addScreen input[type="file"]{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: red;
+}
+
 
 /* CLASSES  */
 
