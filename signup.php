@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once 'php/config.php';
 
 $formulaire = false;
