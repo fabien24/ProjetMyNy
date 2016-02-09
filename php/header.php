@@ -1,8 +1,10 @@
 <?php 
 $account = isset($_SESSION['email']) ? $_SESSION['email'] : '' ;
 $sessRole = isset($_SESSION['role']) ? $_SESSION['role'] : '' ;
+$nav = false;
 if ($sessRole == 4) {
 	$role = 'admin';
+	$nav = true;
 } elseif ($sessRole < 4 && !empty($sessRole)) {
 	$role = 'user';
 }else{
@@ -35,12 +37,14 @@ if ($sessRole == 4) {
 					</ul>
 				</div>
 				<!-- menu shows only for admin -->
+				<?php if($nav) { ?>
 				<nav id="menu">
 					<ul>
 						<li><a href="./editlocation.php">locations</a></li>
 						<li><a href="./edituser.php">users</a></li>
 					</ul>
 				</nav>
+				<?php } ?>
 			</header>
 		</div>
 		<main>
