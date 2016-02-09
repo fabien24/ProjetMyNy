@@ -139,8 +139,8 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 4) {
 <?php
 } else {
 ?>
-    <h2>You are not logged in or you don't have administrator rights</h2>
-    <h3>If that shouldn't be right contact the administrator</h3>
+    <h2>You can't see this page because you don't have administrator rights</h2>
+    <h3>If think that this is an mistake contact the administrator</h3>
     <a href="mailto:myny_projet@hotmail.com?Subject=Link%20broken" target="_top">Contact admin</a>
 <?php        
 }
