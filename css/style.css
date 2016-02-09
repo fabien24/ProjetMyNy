@@ -346,7 +346,6 @@ section {
 	color: #808080;
 }
 
-
 /* error message style */
 .error {
 	margin-top: 150px;
@@ -363,4 +362,8 @@ section {
 
 .error a:hover {
 	text-decoration: underline;
+}
+
+.admin li  {
+	background-color: blue;
 }
