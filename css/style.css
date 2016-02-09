@@ -9,7 +9,6 @@
 	box-sizing: border-box;
 }
 
-
 body {
 	color: #FFF;
 	font-family: verdana;
@@ -53,7 +52,6 @@ main {
 	margin: 0 auto;
 	padding-left: 1rem;
 	padding-right: 1rem;
-	/*	background-color: rgba(255,255,255,0.8);*/
 }
 
 object {
@@ -118,7 +116,7 @@ footer {
 	font-family: 'Righteous', cursive;
 	font-size: 1.5rem;
 	padding-top: 1rem;
-	padding-left: 50px
+	padding-left: 60px;
 }
 
 #branding a {

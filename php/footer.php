@@ -1,7 +1,7 @@
 
 		</main>
 		<footer>
-			<p>© NyMy 2016</p>	
+			<p>© MyNy 2016</p>	
 		</footer>
 	</body>
 </html>
