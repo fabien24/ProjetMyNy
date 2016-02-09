@@ -1,28 +1,33 @@
-/* ----------- iPhone 5 and 5S ----------- */
+/* Mobiles only */
 
-/* Portrait and Landscape */
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 568px)
-  and (-webkit-min-device-pixel-ratio: 2) {
+/* iphones */
+@media screen and (max-width: 620px) {
 
-}
 
-/* Portrait */
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 568px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: portrait) {
-}
+  body {
+    background-image: none;
+    background-color: lightgreen;
+    color: #FFF;
+    font-family: verdana;
+    font-size: 1rem;
+    background-image: none;
+    background-color: #000;
+  }
 
-/* Landscape */
-@media only screen 
-  and (min-device-width: 320px) 
-  and (max-device-width: 568px)
-  and (-webkit-min-device-pixel-ratio: 2)
-  and (orientation: landscape) {
+  #addScreen {
+    color: #FFF;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    border-radius: 0px;
+    background-color: #000;
+  }
 
-}
+
+
+
+
+
+
 
 }
