@@ -97,9 +97,9 @@ if (isset($email) && !empty($email)) {
         }
     }
 }
-
-
-if (isset($_SESSION['role']) && $_SESSION['role'] == 4) {
+if (!$logged) {
+        require_once 'php/loginhtml.php';
+} elseif (isset($_SESSION['role']) && $_SESSION['role'] == 4) {
 ?>  <form action="" method="post">
         <input type="email" name="add" placeholder="Your friends email"><br/>
         <input type="submit" value="Add a friend">
