@@ -1,3 +1,7 @@
+<?php 
+$account = isset($_SESSION['email']) ? $_SESSION['email'] : '' ;
+
+?>
 <!DOCTYPE html>
 <html>
 	<head>
@@ -20,7 +24,7 @@
 				<div id="login">
 					<ul>
 						<li>dot</li>
-						<li>account</li>
+						<li><?php echo $account ;?></li>
 					</ul>
 				</div>
 				<!-- menu shows only for admin -->
