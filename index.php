@@ -21,6 +21,7 @@
 		?><section id="map">
 			<div class="map"></div>
 			<script src="https://maps.google.com/maps/api/js"></script>
+			<script src="js/googlemaps.js"></script>
 			<script>
 				"use strict";
 				var mapCenter = {
@@ -37,8 +38,11 @@
 						},<?php
 					}
 				?>];
+				// call addSitesToMap when the page has loaded
+				google.maps.event.addDomListener(window, "load", function(){
+					addSitesToMap(siteList);
+				});
 			</script>
-			<script src="js/googlemaps.js"></script>
 		</section>
 		<section id="slider"><?php
 			// Slider .hidden on mobile devices

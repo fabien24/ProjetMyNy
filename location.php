@@ -30,6 +30,7 @@
 			</div>
 			<div class="map"></div>
 			<script src="https://maps.google.com/maps/api/js"></script>
+			<script src="js/googlemaps.js"></script>
 			<script>
 				"use strict";
 				var mapCenter = {
@@ -44,8 +45,11 @@
 						name: "<?= $location['sit_name']; ?>"
 					}
 				];
-			</script>
-			<script src="js/googlemaps.js"></script><?php
+				// call addSitesToMap when the page has loaded
+				google.maps.event.addDomListener(window, "load", function(){
+					addSitesToMap(siteList);
+				});
+			</script><?php
 		}
 	}
 	require_once 'php/footer.php';
