@@ -73,6 +73,15 @@ if (!empty($_POST)) {
         <title>Sign-up</title>
     </head>
     <body>
+        <div id="headerMax">
+        <header>
+            <div id="branding">
+                <h1>
+                    <a href="index.php">MyNy</a>
+                </h1>
+            </div>
+        </header>
+        </div>
         <?php
         // Si le token est vérifié on affiche le formulaire
         if ($formulaire) {

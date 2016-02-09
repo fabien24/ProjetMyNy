@@ -71,6 +71,15 @@ if (!empty($_POST)) {
 <head>
    <link rel="stylesheet" type="text/css" href="css/style.css"> 
 </head>
+    <div id="headerMax">
+        <header>
+            <div id="branding">
+                <h1>
+                    <a href="index.php">MyNy</a>
+                </h1>
+            </div>
+        </header>
+    </div>
     <div id="loginScreen">
         <h2>Enter your email to request a password reset</h2>
         <form action="" method="post">
