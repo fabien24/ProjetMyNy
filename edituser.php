@@ -1,5 +1,6 @@
 <?php
 require_once 'php/config.php';
+require_once 'php/loginphp.php';
 $userMail = '
     SELECT usr_email FROM user 
 ';
@@ -98,43 +99,51 @@ if (isset($email) && !empty($email)) {
 }
 
 
-if (isset($_SESSION['role']) && $_SESSION['role'] == 4) {
-?>  <form action="" method="post">
-        <input type="email" name="add" placeholder="Your friends email"><br/>
-        <input type="submit" value="Add a friend">
-    </form>
-    <form action="" method="post">
-        <select name="userList">
-            <option value="0">User</option>
-            <?php foreach ($userMail as $data) : ?>
-            <option value="<?php echo $data['usr_email'] ?>"
-            <?php   if (isset($_POST['userList']) && ($data['usr_email'] == $_POST['userList'])) {
-                         echo 'selected';
-                    } ?> >
-            <?php echo $data['usr_email'] ?>
-            </option>
-            <?php endforeach; ?>
-        </select><br />
-        <input type="submit" value="Show">
-    </form><br />
-    <section>
-       <?php if (isset($role) && $role < 4 && !empty($_POST['userList'])) {?>
-        <form method="post">
-            <label><?php echo $_POST['userList'] ?></label><br />
-            <select name="editRole">
-                <option value="1" selected>User</option>
-                <option value="4">Admin</option>
-            </select><br/>
-            <input type="submit" value="Edit">
+if (!$logged) {
+        require_once 'php/loginhtml.php';
+} elseif (isset($_SESSION['role']) && $_SESSION['role'] == 4) {
+?>  
+<?php
+    require_once 'php/header.php';
+?>
+   <div id="usrScreen">
+        <form action="" method="post">
+            <input type="email" name="add" placeholder="Your friends email"><br/>
+            <input type="submit" value="Add a friend">
         </form>
         <form action="" method="post">
-            <input type="hidden" name="delete">
-            <input type="submit" value="Delete">
-        </form>
-        <?php } elseif (isset($role) && $role == 4 && !empty($_POST['userList'])) { ?>
-        <label>User : <?php echo $_POST['userList']; ?></label><br />
-        <label>Role : Admin</label>
-    </section>
+            <select name="userList">
+                <option value="0">User</option>
+                <?php foreach ($userMail as $data) : ?>
+                <option value="<?php echo $data['usr_email'] ?>"
+                <?php   if (isset($_POST['userList']) && ($data['usr_email'] == $_POST['userList'])) {
+                             echo 'selected';
+                        } ?> >
+                <?php echo $data['usr_email'] ?>
+                </option>
+                <?php endforeach; ?>
+            </select><br />
+            <input type="submit" value="Show">
+        </form><br />
+        <section>
+           <?php if (isset($role) && $role < 4 && !empty($_POST['userList'])) {?>
+            <form method="post">
+                <label><?php echo $_POST['userList'] ?></label><br />
+                <select name="editRole">
+                    <option value="1" selected>User</option>
+                    <option value="4">Admin</option>
+                </select><br/>
+                <input type="submit" value="Edit">
+            </form>
+            <form action="" method="post">
+                <input type="hidden" name="delete">
+                <input type="submit" value="Delete">
+            </form>
+            <?php } elseif (isset($role) && $role == 4 && !empty($_POST['userList'])) { ?>
+            <label>User : <?php echo $_POST['userList']; ?></label><br />
+            <label>Role : Admin</label>
+        </section>
+    </div>
     <?php } ?>
 <?php
 } else {
@@ -144,4 +153,7 @@ if (isset($_SESSION['role']) && $_SESSION['role'] == 4) {
     <a href="mailto:myny_projet@hotmail.com?Subject=Link%20broken" target="_top">Contact admin</a>
 <?php        
 }
+?>
+<?php
+    require_once 'php/footer.php';
 ?>
