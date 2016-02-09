@@ -29,7 +29,7 @@ if (!empty($_POST)) {
     }
     if (isset($email) && isset($password)) {
         $data = '
-            SELECT usr_password
+            SELECT usr_password, usr_role
             FROM user
             WHERE usr_email = :email
         ';
@@ -41,6 +41,7 @@ if (!empty($_POST)) {
             $_SESSION['email'] = $email;
             if (password_verify($password, $passwordSecured)) {
                 $_SESSION['password'] = $passwordSecured;
+                $_SESSION['role'] = $result['usr_role'];
                 header("Refresh:0");
             } else {
                 $pwVerif = false;
