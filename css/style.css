@@ -151,7 +151,7 @@ footer {
 	margin: 0 auto;
 	margin-top: 80px;
 	background-color: #fff;
-	height: 250px;
+	min-height: 250px;
 	width: 300px;
 	-webkit-box-shadow: 7px 5px 22px 5px rgba(0,0,0,0.75);
 	-moz-box-shadow: 7px 5px 22px 5px rgba(0,0,0,0.75);
@@ -170,6 +170,28 @@ footer {
 
 #loginScreen a:hover {
 	text-decoration: underline;
+}
+
+#loginScreen label {
+	color: #000;
+}
+
+#loginScreen ul {
+	list-style-type: none;
+	font-size: 0.8rem;
+}
+
+#loginScreen h2 {
+	font-size: 1.1rem;
+	color: #000;
+}
+
+/* buton submit in form */
+#loginScreen .submit {
+	margin-bottom: 15px;
+	padding: 0;
+	border-radius: 5px;
+	background-color: orange;
 }
 
 /* CLASSES  */
@@ -237,10 +259,22 @@ footer {
 	color: #808080;
 }
 
-/* buton submit in form */
-#loginScreen .submit {
-	margin-bottom: 15px;
-	padding: 0;
-	border-radius: 5px;
-	background-color: orange;
+
+
+/* error message style */
+.error {
+	margin-top: 150px;
+	text-align: center;
+}
+
+.error h1 {
+	color: orange;
+}
+
+.error a {
+	color: orange;
+}
+
+.error a:hover {
+text-decoration: underline;
 }

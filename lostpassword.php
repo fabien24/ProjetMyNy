@@ -68,23 +68,31 @@ if (!empty($_POST)) {
 
 ?>
 <?php if (!$send && !$failure) { ?>
-<h2>Enter your email to request a link for resetting your password</h2>
-<form action="" method="post">
-    <input type="email" name="email" placeholder="Your Email">
-    <input type="submit" value="Send"><br />
-    <label>
-        <?php
-        if (!$emailValid) {
-        ?> Email incorrect <?php
-        } elseif (!$emailFilled) {
-        ?> Email empty <?php
-        }
-        ?>
-    </label>
-</form>
-<?php } elseif ($send) { ?>
-<h2>Email has been sent</h2>
-<?php } elseif (!$send && !$failure) { ?>
-<h2>There has been an problem. Try again later or contact the administrator</h2><br />
-<a href="mailto:myny_projet@hotmail.com?Subject=Link%20broken" target="_top">Contact admin</a>
-<?php } ?>
+<head>
+   <link rel="stylesheet" type="text/css" href="css/style.css"> 
+</head>
+    <div id="loginScreen">
+        <h2>Enter your email to request a password reset</h2>
+        <form action="" method="post">
+            <input type="email" name="email" placeholder="Your Email">
+            <input class="submit" type="submit" value="Send"><br />
+            <label>
+                <?php
+                if (!$emailValid) {
+                ?> Email incorrect <?php
+                } elseif (!$emailFilled) {
+                ?> Email empty <?php
+                }
+                ?>
+            </label>
+        </form>
+        <?php } elseif ($send) { ?>
+        <h2>Email has been sent</h2>
+        <?php } elseif (!$send && !$failure) { ?>
+        <h2>There has been an problem. Try again later or contact the administrator</h2><br />
+        <a href="mailto:myny_projet@hotmail.com?Subject=Link%20broken" target="_top">Contact admin</a>
+        <?php } ?>
+    </div>
+<?php
+    require_once 'php/footer.php';
+?>
