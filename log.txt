@@ -1,0 +1,2 @@
+09/02/2016, 11:22:13 =>
+The user renaud.ialacci@gmail.com entered a new password and got his token removed

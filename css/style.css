@@ -55,6 +55,7 @@ main {
 }
 
 object {
+	object-fit: contain;
 	margin-top: 10px;
 	margin-bottom: 10px;
 	float: left;
@@ -92,6 +93,10 @@ footer {
     text-shadow: 1px 1px 2px #000, 0 0 25px #000, 0 0 5px #fff;
 }
 
+section {
+	margin: 0 auto;
+	max-width: 960px;
+}
 
 /* ID's */
 
@@ -205,6 +210,7 @@ footer {
 
 /* map display single location */
 .map {
+	color: #000;
 	border: 10px solid #fff;
 	border-radius: 10px;
 	height: 400px; 
@@ -258,6 +264,7 @@ footer {
 }
 
 .description{
+	font-size: 0.9rem;
 	min-height: 250px;
 }
 
