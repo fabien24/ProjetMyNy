@@ -15,7 +15,7 @@
 		if ($stmt->execute()) {
 			$location = $stmt->fetch();
 			?><h1 class="loc"><?= $location['sit_name']; ?></h1>
-			<div class="rating"><?= $location['sit_rating']; ?></div>
+			<div class="rating" style="width: <?= 30*intval($location['sit_rating']); ?>px;"></div>
 			<div class="type"><?= $location['typ_name']; ?></div>
 			<object data="<?= $location['sit_image_path']; ?>"></object>
 			<div class="locContent">
