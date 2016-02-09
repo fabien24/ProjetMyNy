@@ -55,7 +55,7 @@ main {
 }
 
 object {
-	object-fit: contain;
+	object-fit: cover;
 	margin-top: 10px;
 	margin-bottom: 10px;
 	float: left;
@@ -206,6 +206,47 @@ section {
 	background-color: orange;
 }
 
+#addScreen {
+	color: #000;
+	text-align: center;
+	border-radius: 15px;
+	padding: 20px;
+	margin: 0 auto;
+	margin-top: 80px;
+	background-color: #fff;
+	min-height: 250px;
+	width: 450px;
+	-webkit-box-shadow: 7px 5px 22px 5px rgba(0,0,0,0.75);
+	-moz-box-shadow: 7px 5px 22px 5px rgba(0,0,0,0.75);
+	box-shadow: 7px 5px 22px 5px rgba(0,0,0,0.75);
+}
+
+#addScreen input, #addScreen select {
+	font-weight: 400;
+	margin-top: 5px;
+	padding: 5px;
+	font-size: 14px;
+	border: 1px solid orange;
+	width: 250px;
+	height: 28px;
+}
+
+#addScreen textarea {
+	width: 250px;
+	max-height: 300px;
+	min-height: 100px;
+}
+
+#addScreen span {
+	text-align: left;
+	display: inline-block;
+	width: 150px;
+}
+
+#addScreen h1 {
+	font-size: 1.6rem;
+}
+
 /* CLASSES  */
 
 /* map display single location */
@@ -264,6 +305,7 @@ section {
 }
 
 .description{
+	margin-bottom: 10px;
 	font-size: 0.9rem;
 	min-height: 250px;
 }

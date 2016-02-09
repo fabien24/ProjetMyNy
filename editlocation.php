@@ -146,71 +146,74 @@
 			$location = $stmt->fetch(PDO::FETCH_ASSOC);
 		}
 	}
-	?><h1><?php
-		echo !isset($_GET['id']) ? 'Add a location' : 'Modify '.$location['sit_name'];
-	?></h1>
-	<form action="" method="post" enctype="multipart/form-data"><?php
-		if (isset($_GET['id'])) {
-			?><input type="hidden" name="id" value="<?= $_GET['id'] ?>"/><?php
-		}
-		?><label><span>Name:</span><input name="name" value="<?= $location['sit_name']; ?>" required="required"/><?php
-			if (!$nameValid) {
-				?><strong>invalid</strong><?php
+	?>
+	<div id="addScreen">
+		<h1><?php
+			echo !isset($_GET['id']) ? 'Add a location' : 'Modify '.$location['sit_name'];
+		?></h1>
+		<form action="" method="post" enctype="multipart/form-data"><?php
+			if (isset($_GET['id'])) {
+				?><input type="hidden" name="id" value="<?= $_GET['id'] ?>"/><?php
 			}
-		?></label>
-		<label><span>Type:</span>
-			<select name="type" required="required"><?php
-				foreach ($types as $type) {
-					?><option value="<?= $type['typ_id']; ?>"<?php
-						echo ($type['typ_id'] === $location['typ_id']) ? ' selected="selected"' : '';
-					?>><?= $type['typ_name']; ?></option><?php
+			?><label><span>Name:</span><input name="name" value="<?= $location['sit_name']; ?>" required="required"/><?php
+				if (!$nameValid) {
+					?><strong>invalid</strong><?php
 				}
-			?></select><?php
-			if (!$typeIdValid) {
-				?><strong>invalid</strong><?php
-			}
-		?></label>
-		<label><span>Address:</span><input name="address" value="<?= $location['sit_address']; ?>"/></label>
-		<label><span>Postal code:</span><input name="postal-code" value="<?= $location['sit_postal_code']; ?>"/></label>
-		<label><span>City:</span><input name="city" value="<?= $location['sit_city']; ?>"/></label>
-		<label><span>Email:</span><input type="email" name="email" value="<?= $location['sit_email'];?>"/><?php
-			if (!$emailValid) {
-				?><strong>invalid</strong><?php
-			}
-		?></label>
-		<label><span>Phone:</span><input type="tel" name="phone" value="<?= $location['sit_phone']; ?>"/></label>
-		<label><span>Description:</span>
-			<textarea name="description"><?= $location['sit_description']; ?></textarea>
-		</label>
-		<label><span>Image:</span><input type="file" name="image"/><?php
-			if (!$fileValid) {
-				?><strong>invalid</strong><?php
-			}
-		?></label>
-		<div>
-			<label><span>Latitude:</span><input name="latitude" value="<?= $location['sit_latitude']; ?>"/><?php
-			if (!$latitudeValid) {
-				?><strong>invalid</strong><?php
-			}
-		?></label>
-			<label><span>Longitude:</span><input name="longitude" value="<?= $location['sit_longitude']; ?>"/><?php
-			if (!$longitudeValid) {
-				?><strong>invalid</strong><?php
-			}
-		?></label>
-			<button type="button">Check location on the map</button>
-			<!--div class="map"></div>
-			<script src="https://maps.google.com/maps/api/js"></script>
-			<script>
-				"use strict";
-				var sitLatitude = ;
-				var sitLongitude = ;
-				var sitName = "";
-			</script>
-			<script src="js/googlemaps.js"></script-->
-		</div>
-		<button><?php
-			echo !isset($_GET['id']) ? 'Add' : 'Change';
-		?></button>
-	</form><?php
+			?></label>
+			<label><span>Type:</span>
+				<select name="type" required="required"><?php
+					foreach ($types as $type) {
+						?><option value="<?= $type['typ_id']; ?>"<?php
+							echo ($type['typ_id'] === $location['typ_id']) ? ' selected="selected"' : '';
+						?>><?= $type['typ_name']; ?></option><?php
+					}
+				?></select><?php
+				if (!$typeIdValid) {
+					?><strong>invalid</strong><?php
+				}
+			?></label>
+			<label><span>Address:</span><input name="address" value="<?= $location['sit_address']; ?>"/></label>
+			<label><span>Postal code:</span><input name="postal-code" value="<?= $location['sit_postal_code']; ?>"/></label>
+			<label><span>City:</span><input name="city" value="<?= $location['sit_city']; ?>"/></label>
+			<label><span>Email:</span><input type="email" name="email" value="<?= $location['sit_email'];?>"/><?php
+				if (!$emailValid) {
+					?><strong>invalid</strong><?php
+				}
+			?></label>
+			<label><span>Phone:</span><input type="tel" name="phone" value="<?= $location['sit_phone']; ?>"/></label>
+			<label><span>Description:</span>
+				<textarea name="description"><?= $location['sit_description']; ?></textarea>
+			</label>
+			<label><span>Image:</span><input type="file" name="image"/><?php
+				if (!$fileValid) {
+					?><strong>invalid</strong><?php
+				}
+			?></label>
+			<div>
+				<label><span>Latitude:</span><input name="latitude" value="<?= $location['sit_latitude']; ?>"/><?php
+				if (!$latitudeValid) {
+					?><strong>invalid</strong><?php
+				}
+			?></label>
+				<label><span>Longitude:</span><input name="longitude" value="<?= $location['sit_longitude']; ?>"/><?php
+				if (!$longitudeValid) {
+					?><strong>invalid</strong><?php
+				}
+			?></label>
+				<button type="button">Check location on the map</button>
+				<!--div class="map"></div>
+				<script src="https://maps.google.com/maps/api/js"></script>
+				<script>
+					"use strict";
+					var sitLatitude = ;
+					var sitLongitude = ;
+					var sitName = "";
+				</script>
+				<script src="js/googlemaps.js"></script-->
+			</div>
+			<button><?php
+				echo !isset($_GET['id']) ? 'Add' : 'Change';
+			?></button>
+		</form>
+	</div><?php
 	require_once 'php/footer.php';

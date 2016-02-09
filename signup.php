@@ -125,8 +125,7 @@ if (!empty($_POST)) {
 <?php
         }
 ?>
+
 <?php
     require_once 'php/footer.php';
 ?>
-    </body>
-</html>
