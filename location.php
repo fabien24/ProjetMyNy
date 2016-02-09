@@ -32,9 +32,17 @@
 			<script src="https://maps.google.com/maps/api/js"></script>
 			<script>
 				"use strict";
-				var sitLatitude = <?= $location['sit_latitude']; ?>;
-				var sitLongitude = <?= $location['sit_longitude']; ?>;
-				var sitName = "<?= $location['sit_name']; ?>";
+				var mapCenter = {
+					latitude: <?= $location['sit_latitude']; ?>,
+					longitude: <?= $location['sit_longitude']; ?>
+				}
+				var siteList = [
+					{
+						latitude: <?= $location['sit_latitude']; ?>,
+						longitude: <?= $location['sit_longitude']; ?>,
+						name: "<?= $location['sit_name']; ?>"
+					}
+				];
 			</script>
 			<script src="js/googlemaps.js"></script><?php
 		}
