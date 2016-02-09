@@ -3,12 +3,12 @@ $account = isset($_SESSION['email']) ? $_SESSION['email'] : '' ;
 $sessRole = isset($_SESSION['role']) ? $_SESSION['role'] : '' ;
 $nav = false;
 if ($sessRole == 4) {
-	$role = 'admin';
+	$headerRole = 'admin';
 	$nav = true;
 } elseif ($sessRole < 4 && !empty($sessRole)) {
-	$role = 'user';
+	$headerRole = 'user';
 }else{
-	$role = '';
+	$headerRole = '';
 }
 ?>
 <!DOCTYPE html>
@@ -32,7 +32,7 @@ if ($sessRole == 4) {
 				<!-- shows who is logged in -->
 				<div id="login">
 					<ul>
-						<li class="<?php echo $role ?>">dot</li>
+						<li class="<?php echo $headerRole ?>">dot</li>
 						<li><?php echo $account ;?></li>
 					</ul>
 				</div>
