@@ -5,7 +5,7 @@ function initGoogleMap(){
 	var mapContainer = document.querySelector(".map");
 	mapContainer.style.display = "block"; // the mapContainer stays hidden when JS is disabled
 	var options = {
-		zoom: mapCenter.zoom,
+		zoom: 17,
 		center: new google.maps.LatLng(mapCenter.latitude, mapCenter.longitude),
 		mapTypeId: google.maps.MapTypeId.HYBRID
 	};
@@ -15,12 +15,11 @@ function initGoogleMap(){
 			map: map,
 			position: new google.maps.LatLng(siteList[i].latitude, siteList[i].longitude)
 		});
-		marker.infoWindow = new google.maps.InfoWindow({
+		var infowindow = new google.maps.InfoWindow({
 			content: siteList[i].name
 		});
-		google.maps.event.addListener(marker, "click", function(){
-			this.infoWindow.open(map, this);
-		});
+		google.maps.event.addListener(marker, "click", function(){infowindow.open(map,marker);});
+		infowindow.open(map, marker);
 	}
 }
 

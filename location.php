@@ -34,8 +34,7 @@
 				"use strict";
 				var mapCenter = {
 					latitude: <?= $location['sit_latitude']; ?>,
-					longitude: <?= $location['sit_longitude']; ?>,
-					zoom: 17
+					longitude: <?= $location['sit_longitude']; ?>
 				}
 				var siteList = [
 					{
