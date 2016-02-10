@@ -90,11 +90,14 @@ footer {
     margin-top: 30px;
     max-width: 960px;
     padding: 15px;
+    padding-top: 50px;
+    min-height: 150px;
     text-shadow: 1px 1px 2px #000, 0 0 25px #000, 0 0 5px #fff;
 }
 
 section {
 	margin: 0 auto;
+	margin-top: 20px;
 	max-width: 960px;
 }
 
@@ -285,6 +288,7 @@ section {
 
 /* ID on index page  */
 #map {
+	max-width: 960px;
 	margin-top: 25px;
 }
 
@@ -292,20 +296,25 @@ section {
 /* CLASSES  */
 
 /* map display single location */
+.clear {
+	clear: both;
+}
+
 .map {
-	color: #000;
-	border: 10px solid #fff;
-	border-radius: 10px;
-	height: 400px; 
-	width: 930px; 
-	display: block; 
-	position: relative; 
-	overflow: hidden; 
-	transform: translateZ(0px); 
-	background-color: rgb(229, 227, 223);
-	-webkit-box-shadow: 7px 5px 22px 5px rgba(0,0,0,0.75);
-	-moz-box-shadow: 7px 5px 22px 5px rgba(0,0,0,0.75);
-	box-shadow: 7px 5px 22px 5px rgba(0,0,0,0.75);
+    color: #000;
+    margin: 0 auto;
+    border: 15px solid #fff;
+    border-radius: 10px;
+    height: 400px;
+    width: 900px;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    transform: translateZ(0px);
+    background-color: rgb(229, 227, 223);
+    -webkit-box-shadow: 7px 5px 22px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 5px 22px 5px rgba(0,0,0,0.75);
+    box-shadow: 7px 5px 22px 5px rgba(0,0,0,0.75);
 }
 
 .rating {
@@ -376,9 +385,51 @@ section {
 }
 
 .admin li  {
-	background-color: blue;
+	color: blue;
 }
 
+
 .oneLocation {
-	
+    width: 48%;
+    background-color: #EAEAEA;
+    border-radius: 15px;
+    padding: 20px;
+    float: left;
+    margin-left: 10px;
+    color: #000;
+    border: 15px solid #FFF;
+    min-height: 250px;
+    -webkit-box-shadow: 7px 5px 22px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 5px 22px 5px rgba(0,0,0,0.75);
+    box-shadow: 7px 5px 22px 5px rgba(0,0,0,0.75);
 }
+
+
+.oneLocation .description {
+	text-align: justify;
+	font-size: 1.4rem;
+}
+
+.oneLocation .description {
+    margin-bottom: 10px;
+    font-size: 0.9rem;
+    min-height: 150px;
+} 
+
+.oneLocation a {
+	color: #000;
+}
+
+.oneLocation a:hover {
+	text-decoration: underline;
+}
+
+.oneLocation h2 {
+	margin-bottom: 15px; 
+}
+
+.oneLocation .type {
+	margin-top: 10px;
+	margin-bottom: 15px;
+}
+
