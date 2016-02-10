@@ -28,41 +28,56 @@ if (isset($_GET['token']) && !empty($_GET['token'])) {
 $pwConfirmation = true;
 $pwValid = true;
 $pwFilled = true;
+$unFilled = true;
+$unValid = true;
 
 if (!empty($_POST)) {
 
 //  vérification des données récupérées
-    if (isset($_POST['pwinitial']) && !empty($_POST['pwinitial'])) {
-        $pattern = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[a-zA-Z\d]{8,}$/';
-        $pwCheck = preg_match($pattern, $_POST['pwinitial']);
-        if ($pwCheck == 1) {
-            $password = $_POST['pwinitial'];
-            if (!empty($_POST['pwconfirm'])
-            && ($password == $_POST['pwconfirm'])) {
-                $securePassword = password_hash($password, PASSWORD_BCRYPT);
-                $addPw = '
-                UPDATE user SET usr_password = :password , usr_token = "" WHERE usr_email = :email
-                ';
-                $pdoStatement = $pdo -> prepare($addPw);
-                $pdoStatement -> bindvalue(':password', $securePassword, PDO::PARAM_STR);
-                $pdoStatement -> bindvalue(':email', $userEmail, PDO::PARAM_STR);
-                if ($pdoStatement -> execute() && $pdoStatement -> rowCount() > 0) {
-                    //changement du mot de passe enregistré dans le log
-                    $time = date('d/m/Y, H:i:s').' =>';
-                    $message = 'The user '.$userEmail.' entered a new password and got his token removed';
-                    writeLog($message);
-                    $_SESSION['password'] = $securePassword;
-                    header('Location: index.php');
-                }
-            } else {
-                $pwConfirmation = false;
-            }
-        } else {
-            $pwValid = false;
-        }
-    } else {
-        $pwFilled = false;
-    }
+	if (isset($_POST['username']) && !empty($_POST['username'])) {
+		$pattern = '/^([a-z_\d]*)$/';
+		$unCheck = preg_match($pattern, $_POST['username']);
+		if ($unCheck == 1) {
+			$username = $_POST['username'];
+		    if (isset($_POST['pwinitial']) && !empty($_POST['pwinitial'])) {
+		        $pattern = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[\w\W\d]{8,}$/';
+		        $pwCheck = preg_match($pattern, $_POST['pwinitial']);
+		        if ($pwCheck == 1) {
+		            $password = $_POST['pwinitial'];
+		            if (!empty($_POST['pwconfirm'])
+		            && ($password == $_POST['pwconfirm'])) {
+		                $securePassword = password_hash($password, PASSWORD_BCRYPT);
+		                $addPw = '
+		                UPDATE user SET usr_password = :password, usr_name = :username, usr_token = "" WHERE usr_email = :email
+		                ';
+		                $pdoStatement = $pdo -> prepare($addPw);
+		                $pdoStatement -> bindvalue(':password', $securePassword, PDO::PARAM_STR);
+		                $pdoStatement -> bindvalue(':username', $username, PDO::PARAM_STR);
+		                $pdoStatement -> bindvalue(':email', $userEmail, PDO::PARAM_STR);
+		                if ($pdoStatement -> execute() && $pdoStatement -> rowCount() > 0) {
+		                    //changement du mot de passe enregistré dans le log
+		                    $time = date('d/m/Y, H:i:s').' =>';
+		                    $message = 'The user '.$username.' entered a new password and got his token removed';
+		                    writeLog($message);
+		                    $_SESSION['password'] = $securePassword;
+		                    $_SESSION['username'] = $username;
+		                    header('Location: index.php');
+		                }
+		            } else {
+		                $pwConfirmation = false;
+		            }
+		        } else {
+		            $pwValid = false;
+		        }
+		    } else {
+		        $pwFilled = false;
+		    }
+		} else {
+			$unValid = false;
+		}   
+	} else {
+		$unFilled = false;
+	}
 }
 ?>
 
@@ -89,6 +104,8 @@ if (!empty($_POST)) {
             <div id="loginScreen">
                 <form action="" method="post">
                     <label><?php echo $userEmail ?></label><br />
+                    <input type="text" name="username"
+                    	placeholder ="Username"><br />
                     <input type="password" name="pwinitial" 
                         placeholder="New password"><br />
                     <input type="password" name="pwconfirm" 
@@ -96,7 +113,18 @@ if (!empty($_POST)) {
                     <input class="submit" type="submit" value="Set password"><br />
                     <label><?php
                         // Gestion des erreurs du formulaire du mot de passe
-                    if (!$pwFilled) {
+                    if (!$unFilled) {
+                    	?>Username empty <?php
+                    } elseif(!$unValid) { ?>
+                            Username invalid: 
+                            <ul>
+                                <li><u>Can only contain :</u></li>
+                                <li>lowercase</li>
+                                <li>numbers</li>
+                                <li>underscore _</li>
+                            </ul>
+                        <?php
+                    } elseif (!$pwFilled) {
                         ?>Password empty <?php
                     } elseif (!$pwValid) { ?>
                             Password invalid: 
@@ -120,7 +148,7 @@ if (!empty($_POST)) {
         <div class="error">
             <img src="img/homer.png" />
             <h1>SOMETHING WENT WRONG</h1>
-            <p>Your link is defect please contact the <a href="mailto:administratorsmail">administrator</a> to get a new one.</p>
+            <p>Your link is defect please contact the <a href="mailto:myny_projet@hotmail.com?Subject=Link%20broken" target="_top">administrator</a> to get a new one.</p>
         </div>
 <?php
         }
