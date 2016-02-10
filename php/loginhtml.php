@@ -5,7 +5,7 @@
         <input class="submit" type="submit" value="Log in">
         <a href="">Lost password</a><br />
         <label>
-            <?php
+            <?php // gestion des erreures 
             if (!$emailFilled) {
             ?> Email empty <?php
             } elseif (!$pwFilled) {
