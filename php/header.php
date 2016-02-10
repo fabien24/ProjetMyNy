@@ -1,5 +1,5 @@
 <?php 
-$account = isset($_SESSION['email']) ? $_SESSION['email'] : '' ;
+$account = isset($_SESSION['username']) ? $_SESSION['username'] : '' ;
 $sessRole = isset($_SESSION['role']) ? $_SESSION['role'] : '' ;
 $nav = false;
 if ($sessRole == 4) {
@@ -33,8 +33,8 @@ if ($sessRole == 4) {
 				<!-- shows who is logged in -->
 				<div id="login">
 					<ul>
-						<li class="<?php echo $headerRole ?>">dot</li>
-						<li><?php echo $account ;?></li>
+						<li></li>
+						<li class="<?php echo $headerRole ?>"><?php echo $account ;?></li>
 					</ul>
 				</div>
 				<!-- menu shows only for admin -->
