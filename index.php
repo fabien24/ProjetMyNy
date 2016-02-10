@@ -65,7 +65,10 @@
 					<a href="./location.php?id=<?= $location['sit_id'] ?>">Read more…</a>
 				</div><?php
 			}
-		?></section><?php
+		?></section>
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="unslider/src/js/unslider.js"></script>
+		<script src="js/initslider.js"></script><?php
 	}
 	require_once 'php/footer.php';
 ?>
