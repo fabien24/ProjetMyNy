@@ -47,8 +47,13 @@
 			</script>
 		</section>
 		<section id="slider"><?php
-			// Slider .hidden on mobile devices
-		?></section>
+			// Slider hidden on mobile devices
+			?><ul>
+				<li>My slide</li>
+				<li>Another slide</li>
+				<li>My last slide</li>
+			</ul>
+		</section>
 		<section id="locations"><?php
 			// locations list 2 per row (1 on mobile device)
 			foreach ($lastAddedLocations as $location) {
