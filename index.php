@@ -34,7 +34,7 @@
 						?>{
 							latitude: <?= $location['sit_latitude']; ?>,
 							longitude: <?= $location['sit_longitude']; ?>,
-							name: "<?= $location['sit_name']; ?>"
+							name: "<a href=\"./location.php?id=<?= $location['sit_id']; ?>\"><?= $location['sit_name']; ?></a>"
 						},<?php
 					}
 				?>];
