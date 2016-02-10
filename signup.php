@@ -8,7 +8,7 @@ if (isset($_GET['token']) && !empty($_GET['token'])) {
 
 //  Récupération des données de la DB
     $data = '
-        SELECT usr_token , usr_email 
+        SELECT usr_token, usr_email, usr_role 
         FROM user
         WHERE usr_token = :token
     ';
@@ -17,7 +17,9 @@ if (isset($_GET['token']) && !empty($_GET['token'])) {
     if ($pdoStatement -> execute() && $pdoStatement -> rowCount() > 0) {
         $userInfo = $pdoStatement -> fetch(PDO::FETCH_ASSOC);
         $email = $userInfo['usr_email'];
+        $uRole = $uderInfo['usr_role'];
         $_SESSION['email'] = $email;
+        $_SESSION['role'] =$uRole;
         $userEmail = $_SESSION['email'];
         $formulaire = true;
     }
