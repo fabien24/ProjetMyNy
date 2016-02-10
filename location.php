@@ -6,6 +6,27 @@
 	} else {
 		require_once 'php/config.php';
 		$id = intval($_GET['id']);
+		if (!empty($_POST)) {
+			$ratingColumn = null;
+			if (isset($_POST['rate5_x'])) {
+				$ratingColumn = 'sit_rating5';
+			} else if (isset($_POST['rate4_x'])) {
+				$ratingColumn = 'sit_rating4';
+			} else if (isset($_POST['rate3_x'])) {
+				$ratingColumn = 'sit_rating3';
+			} else if (isset($_POST['rate2_x'])) {
+				$ratingColumn = 'sit_rating2';
+			} else if (isset($_POST['rate1_x'])) {
+				$ratingColumn = 'sit_rating1';
+			}
+			if ($ratingColumn) {
+				$stmt = $pdo->prepare('UPDATE site
+					SET '.$ratingColumn.' = '.$ratingColumn.' + 1
+					WHERE sit_id = :id');
+				$stmt->bindValue(':id', $id, PDO::PARAM_INT);
+				$stmt->execute();
+			}
+		}
 		$stmt = $pdo->prepare('SELECT sit_name, sit_address, sit_postal_code, sit_city, sit_description, sit_image_path, sit_longitude, sit_latitude, ROUND((5*sit_rating5+4*sit_rating4+3*sit_rating3+2*sit_rating2+sit_rating1)/(sit_rating5+sit_rating4+sit_rating3+sit_rating2+sit_rating1),1) AS sit_rating, sit_phone, sit_email, sit_date_added, typ_name
 			FROM site INNER JOIN type
 			ON site.typ_id = type.typ_id
@@ -15,7 +36,10 @@
 		if ($stmt->execute()) {
 			$location = $stmt->fetch();
 			?><h1 class="loc"><?= $location['sit_name']; ?></h1>
-			<div class="rating" style="width: <?= 30*intval($location['sit_rating']); ?>px;"></div>
+			<div class="rating" style="width: <?= 30*floatval($location['sit_rating']); ?>px;"></div>
+			<form class="rate" action="" method="post">
+				<input type="image" src="img/star.png" alt="Rate with 1 star " name="rate1" title="★"/><input type="image" src="img/star.png" alt="Rate with 2 stars " name="rate2" title="★★"/><input type="image" src="img/star.png" alt="Rate with 3 stars " name="rate3" title="★★★"/><input type="image" src="img/star.png" alt="Rate with 4 stars " name="rate4" title="★★★★"/><input type="image" src="img/star.png" alt="Rate with 5 stars" name="rate5" title="★★★★★"/>
+			</form>
 			<div class="type"><?= $location['typ_name']; ?></div>
 			<object data="<?= $location['sit_image_path']; ?>"></object>
 			<div class="locContent">
