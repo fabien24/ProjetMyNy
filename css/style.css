@@ -253,6 +253,11 @@ section {
 	font-size: 1.6rem;
 }
 
+#addScreen .map {
+	width: 100%;
+	box-shadow: none;
+}
+
 #usrScreen {
 	color: #000;
 	text-align: center;
@@ -277,6 +282,12 @@ section {
 	width: 250px;
 	height: 28px;
 }
+
+/* ID on index page  */
+#map {
+	margin-top: 25px;
+}
+
 
 /* CLASSES  */
 
@@ -366,4 +377,8 @@ section {
 
 .admin li  {
 	background-color: blue;
+}
+
+.oneLocation {
+	
 }

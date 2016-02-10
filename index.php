@@ -50,7 +50,7 @@
 		<section id="locations"><?php
 			// locations list 2 per row (1 on mobile device)
 			foreach ($lastAddedLocations as $location) {
-				?><div>
+				?><div class="oneLocation">
 					<h2><a href="./location.php?id=<?= $location['sit_id'] ?>"><?= $location['sit_name']; ?></a></h2>
 					<div class="rating" style="width: <?= 30*intval($location['sit_rating']); ?>px;"></div>
 					<div class="type"><?= $location['typ_name'] ?></div>
