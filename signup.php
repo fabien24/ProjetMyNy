@@ -17,7 +17,7 @@ if (isset($_GET['token']) && !empty($_GET['token'])) {
     if ($pdoStatement -> execute() && $pdoStatement -> rowCount() > 0) {
         $userInfo = $pdoStatement -> fetch(PDO::FETCH_ASSOC);
         $email = $userInfo['usr_email'];
-        $uRole = $uderInfo['usr_role'];
+        $uRole = $userInfo['usr_role'];
         $_SESSION['email'] = $email;
         $_SESSION['role'] =$uRole;
         $userEmail = $_SESSION['email'];
