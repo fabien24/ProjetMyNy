@@ -3,7 +3,7 @@
 	require_once 'php/loginphp.php';
 	require_once 'php/header.php';
 	if (!$logged) {
-		require_once 'php/loginhtml.php';//TODO: reenable
+		require_once 'php/loginhtml.php';
 	} else {
 		$allLocations = $pdo->query('SELECT sit_id, sit_name, sit_latitude, sit_longitude, typ_name
 			FROM site INNER JOIN type
