@@ -148,6 +148,17 @@ section {
     text-align: right;
 }
 
+#login input {
+    border-radius: 3px;
+    padding: 3px;
+    border: none;
+    background-color: grey;
+}
+
+#login input:hover {
+    background-color: #FFF; 
+}
+
 #login li {
 	display: inline-block;
 }
@@ -427,25 +438,27 @@ section {
     width: 450px;
     background-color: #EAEAEA;
     border-radius: 15px;
-    padding: 20px;
     float: left;
     margin-left: 0px;
-    color: #000;
+    color: #fff;
     border: 15px solid #FFF;
     min-height: 250px;
-	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#666666+0,878787+22,ffffff+33,f3f3f3+50,ffffff+100 */
-	background: rgb(102,102,102); /* Old browsers */
-	background: -moz-linear-gradient(top,  rgba(102,102,102,1) 0%, rgba(135,135,135,1) 22%, rgba(255,255,255,1) 33%, rgba(243,243,243,1) 50%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
-	background: -webkit-linear-gradient(top,  rgba(102,102,102,1) 0%,rgba(135,135,135,1) 22%,rgba(255,255,255,1) 33%,rgba(243,243,243,1) 50%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom,  rgba(102,102,102,1) 0%,rgba(135,135,135,1) 22%,rgba(255,255,255,1) 33%,rgba(243,243,243,1) 50%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666666', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
-
-
     margin-bottom: 20px;
 }
 
 .oneLocation:nth-child(even) {
     margin-left: 28px;
+}
+
+.location-alpha {
+	padding: 20px;
+	max-width: 100%;
+	height: 100%;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,000000+35,e8e8e8+100&0.7+0,0.8+35,0.4+40,0.4+100 */
+	background: -moz-linear-gradient(top,  rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.8) 35%, rgba(18,18,18,0.4) 40%, rgba(232,232,232,0.4) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.8) 35%,rgba(18,18,18,0.4) 40%,rgba(232,232,232,0.4) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(0,0,0,0.7) 0%,rgba(0,0,0,0.8) 35%,rgba(18,18,18,0.4) 40%,rgba(232,232,232,0.4) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3000000', endColorstr='#66e8e8e8',GradientType=0 ); /* IE6-9 */
 }
 
 
@@ -461,7 +474,7 @@ section {
 } 
 
 .oneLocation a {
-	color: #000;
+	color: #fff;
 }
 
 .oneLocation a:hover {
