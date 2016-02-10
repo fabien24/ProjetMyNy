@@ -155,7 +155,7 @@
 			if (isset($_GET['id'])) {
 				?><input type="hidden" name="id" value="<?= $_GET['id'] ?>"/><?php
 			}
-			?><label><span>Name:</span><input name="name" value="<?= $location['sit_name']; ?>" required="required"/><?php
+			?><label><span>Name:</span><input name="name" id="name" value="<?= $location['sit_name']; ?>" required="required"/><?php
 				if (!$nameValid) {
 					?><strong>invalid</strong><?php
 				}
@@ -190,26 +190,30 @@
 				}
 			?></label>
 			<div>
-				<label><span>Latitude:</span><input name="latitude" value="<?= $location['sit_latitude']; ?>"/><?php
+				<label><span>Latitude:</span><input name="latitude" id="latitude" value="<?= $location['sit_latitude']; ?>"/><?php
 				if (!$latitudeValid) {
 					?><strong>invalid</strong><?php
 				}
 			?></label>
-				<label><span>Longitude:</span><input name="longitude" value="<?= $location['sit_longitude']; ?>"/><?php
+				<label><span>Longitude:</span><input name="longitude" id="longitude" value="<?= $location['sit_longitude']; ?>"/><?php
 				if (!$longitudeValid) {
 					?><strong>invalid</strong><?php
 				}
 			?></label>
-				<button type="button">Check location on the map</button>
-				<!--div class="map"></div>
+				<button type="button" id="update-on-map">Check location on the map</button>
+				<div class="map"></div>
 				<script src="https://maps.google.com/maps/api/js"></script>
+				<script src="js/googlemaps.js"></script>
 				<script>
 					"use strict";
-					var sitLatitude = ;
-					var sitLongitude = ;
-					var sitName = "";
+					var mapCenter = {
+						latitude: 49.77,
+						longitude: 6.10,
+						zoom: 8
+					}
+					var siteList = [];
+					document.getElementById("update-on-map").addEventListener("click", updateMarker);
 				</script>
-				<script src="js/googlemaps.js"></script-->
 			</div>
 			<button><?php
 				echo !isset($_GET['id']) ? 'Add' : 'Change';
