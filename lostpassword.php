@@ -7,10 +7,10 @@ $emailFilled = true;
 $emailValid = true;
 if (!empty($_POST)) {
     $try = true;
-    if (isset($_POST['email']) && !empty($_POST['email'])) {
+    if (isset($_POST['email']) && !empty($_POST['email'])) {// vérification du format de l'adresse mail
         $email = (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) ? $_POST['email'] : '';
     }
-    if (isset($email) && !empty($email)) {
+    if (isset($email) && !empty($email)) {// vérification si l'adresse mail est dans la DB
         $emailVerif = '
         SELECT usr_id, usr_name
         FROM user
@@ -36,7 +36,7 @@ if (!empty($_POST)) {
 			</body>
 			</html>';
             $emailText = 'Go here : http://localhost/projetMyNy/signup.php?token='.$token;
-            if (autoMail($email, $emailHTML, $emailText)) {
+            if (autoMail($email, $emailHTML, $emailText)) {//envoye du mail
                 $message = 'Email pour restaurer le mot de passe envoyé à '.$user;
                 writeLog($message);
                 $send = true;
@@ -46,10 +46,10 @@ if (!empty($_POST)) {
                 $pdoStatement = $pdo -> prepare($addToken);
                 $pdoStatement -> bindvalue(':token', $token, PDO::PARAM_STR);
                 $pdoStatement -> bindvalue(':email', $email, PDO::PARAM_STR);
-                if ($pdoStatement -> execute() && $pdoStatement -> rowCount() > 0) {
+                if ($pdoStatement -> execute() && $pdoStatement -> rowCount() > 0) {//token ajouté à la DB
                     $message = 'token ajouté à '.$user;
                     writeLog($message);
-                } else {
+                } else {// les erreurs
                     $message = 'token ne pouvez pas être ajouter à '.$user;
                     writeLog($message);
                 }
