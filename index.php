@@ -58,11 +58,13 @@
 			// locations list 2 per row (1 on mobile device)
 			foreach ($lastAddedLocations as $location) {
 				?><div class="oneLocation" style="background-image: url('<?= $location['sit_image_path']; ?>');">
-					<h2><a href="./location.php?id=<?= $location['sit_id'] ?>"><?= $location['sit_name']; ?></a></h2>
-					<div class="rating" style="width: <?= 30*intval($location['sit_rating']); ?>px;"></div>
-					<div class="type"><?= $location['typ_name'] ?></div>
-					<div class="description"><?= $location['sit_short_description'] ?><?php echo ($location['sit_description_length'] > 150) ? '…' : ''; ?></div>
-					<a href="./location.php?id=<?= $location['sit_id'] ?>">Read more…</a>
+					<div class="location-alpha">
+						<h2><a href="./location.php?id=<?= $location['sit_id'] ?>"><?= $location['sit_name']; ?></a></h2>
+						<div class="rating" style="width: <?= 30*intval($location['sit_rating']); ?>px;"></div>
+						<div class="type"><?= $location['typ_name'] ?></div>
+						<div class="description"><?= $location['sit_short_description'] ?><?php echo ($location['sit_description_length'] > 150) ? '…' : ''; ?></div>
+						<a href="./location.php?id=<?= $location['sit_id'] ?>">Read more…</a>
+					</div>
 				</div><?php
 			}
 		?></section>
