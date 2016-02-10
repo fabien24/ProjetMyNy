@@ -1,10 +1,10 @@
 <?php
+	require_once 'php/config.php';
 	require_once 'php/header.php';
 	if (empty($_GET) || !isset($_GET['id'])) {
 		// redirect to home page
 		header('Location: http://192.168.210.81/projetMyNy/');
 	} else {
-		require_once 'php/config.php';
 		$id = intval($_GET['id']);
 		if (!empty($_POST)) {
 			$ratingColumn = null;
