@@ -25,6 +25,7 @@ if (!empty($_POST) && isset($_POST['logoff'])) {
 		<!-- Define Max and min width for devices -->
 		<link href="css/mobile.css" rel="stylesheet" media="screen and (max-width: 620px)"/>
 		<link href="css/desktop.css" rel="stylesheet" media="screen and (min-width: 960px)"/>
+		<link rel="stylesheet" href="unslider/dist/css/unslider.css">
 	</head>
 	<body>
 		<div id="headerMax">
