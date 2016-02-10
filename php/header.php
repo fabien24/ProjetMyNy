@@ -10,6 +10,10 @@ if ($sessRole == 4) {
 }else{
 	$headerRole = '';
 }
+if (!empty($_POST) && isset($_POST['logoff'])) {
+	session_destroy();
+	header("Refresh:0");
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -33,7 +37,7 @@ if ($sessRole == 4) {
 				<!-- shows who is logged in -->
 				<div id="login">
 					<ul>
-						<li></li>
+						<li><form method="post"><input type="submit" name="logoff" value="Logoff"></form></li>
 						<li class="<?php echo $headerRole ?>"><?php echo $account ;?></li>
 					</ul>
 				</div>
