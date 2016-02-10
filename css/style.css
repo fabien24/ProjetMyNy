@@ -97,7 +97,7 @@ footer {
 
 section {
 	margin: 0 auto;
-	margin-top: 20px;
+	margin-top: 28px;
 	max-width: 960px;
 }
 
@@ -211,13 +211,14 @@ section {
 #addScreen {
 	color: #000;
 	text-align: center;
+	border: 10px solid #fff;
 	border-radius: 15px;
 	padding: 20px;
 	margin: 0 auto;
 	margin-top: 80px;
-	background-color: #fff;
+	background-color: #E8E8E8;
 	min-height: 250px;
-	width: 450px;
+	width: 500px;
 	-webkit-box-shadow: 7px 5px 22px 5px rgba(0,0,0,0.75);
 	-moz-box-shadow: 7px 5px 22px 5px rgba(0,0,0,0.75);
 	box-shadow: 7px 5px 22px 5px rgba(0,0,0,0.75);
@@ -261,22 +262,46 @@ section {
 	box-shadow: none;
 }
 
+#addScreen button {
+	border-radius: 5px;
+	padding: 10px;
+	margin: 15px auto;
+	background-color: orange;
+	color: black;
+	height: 35px;
+	min-width: 150px;
+	border: none;
+	-webkit-box-shadow: 2px 1px 7px 2px rgba(0,0,0,0.40);
+	-moz-box-shadow: 2px 1px 7px 2px rgba(0,0,0,0.40);
+	box-shadow: 2px 1px 7px 2px rgba(0,0,0,0.40);
+}
+
+#addScreen button:hover {
+	background-color: #FF8229;
+}
+
 #usrScreen {
-	color: #000;
-	text-align: center;
-	border-radius: 15px;
-	padding: 20px;
-	margin: 0 auto;
-	margin-top: 80px;
-	background-color: #fff;
-	min-height: 250px;
-	width: 350px;
-	-webkit-box-shadow: 7px 5px 22px 5px rgba(0,0,0,0.75);
-	-moz-box-shadow: 7px 5px 22px 5px rgba(0,0,0,0.75);
-	box-shadow: 7px 5px 22px 5px rgba(0,0,0,0.75);
+    color: #000;
+    text-align: center;
+    border: 10px solid white;
+    border-radius: 15px;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 80px;
+    background-color: #E4E4E4;
+    min-height: 250px;
+    width: 350px;
+    -webkit-box-shadow: 7px 5px 22px 5px rgba(0,0,0,0.75);
+    -moz-box-shadow: 7px 5px 22px 5px rgba(0,0,0,0.75);
+    box-shadow: 7px 5px 22px 5px rgba(0,0,0,0.75);
+}
+
+#usrScreen label {
+	font-size: 0.8rem;
 }
 
 #usrScreen input, #usrScreen select {
+	background-color: #fff;
 	font-weight: 400;
 	margin-top: 5px;
 	padding: 5px;
@@ -284,6 +309,10 @@ section {
 	border: 1px solid orange;
 	width: 250px;
 	height: 28px;
+}
+
+#usrScreen select {
+	background-color: orange;
 }
 
 /* ID on index page  */
@@ -307,6 +336,7 @@ section {
     border-radius: 10px;
     height: 400px;
     width: 900px;
+    width: 100%;
     display: block;
     position: relative;
     overflow: hidden;
@@ -385,23 +415,37 @@ section {
 }
 
 .admin {
-	color: blue;
+	color: #00C2FF;
+}
+
+.user {
+	color: #71FF71;
 }
 
 
-.oneLocation {
-    width: 48%;
+.oneLocation, .oneLocation:nth-child(even) {
+    width: 450px;
     background-color: #EAEAEA;
     border-radius: 15px;
     padding: 20px;
     float: left;
-    margin-left: 10px;
+    margin-left: 0px;
     color: #000;
     border: 15px solid #FFF;
     min-height: 250px;
-    -webkit-box-shadow: 7px 5px 22px 5px rgba(0,0,0,0.75);
-    -moz-box-shadow: 7px 5px 22px 5px rgba(0,0,0,0.75);
-    box-shadow: 7px 5px 22px 5px rgba(0,0,0,0.75);
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#666666+0,878787+22,ffffff+33,f3f3f3+50,ffffff+100 */
+	background: rgb(102,102,102); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(102,102,102,1) 0%, rgba(135,135,135,1) 22%, rgba(255,255,255,1) 33%, rgba(243,243,243,1) 50%, rgba(255,255,255,1) 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(102,102,102,1) 0%,rgba(135,135,135,1) 22%,rgba(255,255,255,1) 33%,rgba(243,243,243,1) 50%,rgba(255,255,255,1) 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(102,102,102,1) 0%,rgba(135,135,135,1) 22%,rgba(255,255,255,1) 33%,rgba(243,243,243,1) 50%,rgba(255,255,255,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#666666', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+
+    margin-bottom: 20px;
+}
+
+.oneLocation:nth-child(even) {
+    margin-left: 28px;
 }
 
 
@@ -425,6 +469,12 @@ section {
 }
 
 .oneLocation h2 {
+	margin-bottom: 15px;
+	text-shadow: 2px 2px 7px rgba(0, 0, 0, 1);
+}
+
+.oneLocation h2 a{
+	color: #FFF;
 	margin-bottom: 15px; 
 }
 
