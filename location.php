@@ -48,10 +48,13 @@
 					<?= $location['sit_address']; ?><br/>
 					<?= $location['sit_postal_code']; ?> <?= $location['sit_city']; ?>
 				</address>
-				<a href="mailto:<?= $location['sit_email'];?>"><?= $location['sit_email'];?></a>
+				<a href="mailto:<?= $location['sit_email']; ?>"><?= $location['sit_email']; ?></a>
 				<a href="tel:<?= str_replace(' ', '', $location['sit_phone']); ?>"><?= $location['sit_phone']; ?></a>
-				<div class="date-added"><?= $location['sit_date_added'];?></div>
-			</div>
+				<div class="date-added"><?= $location['sit_date_added']; ?></div><?php
+				if (isset($_SESSION['role']) && $_SESSION['role'] >= 3) {
+					?><a href="./editlocation.php?id=<?= $id; ?>">Edit</a><?php
+				}
+			?></div>
 			<div class="map"></div>
 			<script src="https://maps.google.com/maps/api/js"></script>
 			<script src="js/googlemaps.js"></script>
