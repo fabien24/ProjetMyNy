@@ -9,14 +9,14 @@ if (!empty($_SESSION) && isset($_SESSION['email']) && isset($_SESSION['password'
 }
 
 if ($logged) {
-    goto loggedIn;
+    goto loggedIn;// si on est déja logged in on sursaute le passage suivant
 }
 
 $emailVerif = true;
 $pwVerif = true;
 $emailFilled = true;
 $pwFilled = true;
-if (!empty($_POST)) {
+if (!empty($_POST)) { // on fait les vérifications des données du formulaire dans loginhtml.php
     if (isset($_POST['email']) && !empty($_POST['email'])) {
         $email = (filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) ? $_POST['email'] : '';
     } else {
@@ -27,7 +27,7 @@ if (!empty($_POST)) {
     } else {
         $pwFilled = false;
     }
-    if (isset($email) && isset($password)) {
+    if (isset($email) && isset($password)) { //si les données sont ceux de la db on les ajoute en session 
         $data = '
             SELECT usr_password, usr_role, usr_name
             FROM user
