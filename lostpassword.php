@@ -12,7 +12,7 @@ if (!empty($_POST)) {
     }
     if (isset($email) && !empty($email)) {
         $emailVerif = '
-        SELECT usr_id
+        SELECT usr_id, usr_name
         FROM user
         WHERE usr_email = :email
         ';
@@ -21,6 +21,7 @@ if (!empty($_POST)) {
         if ($pdoStatement -> execute() && $pdoStatement -> rowCount() > 0) {
             $result = $pdoStatement -> fetch(PDO::FETCH_ASSOC);
             $token = md5($email.'peepnsmyny'.$result['usr_id']);
+            $user = $result['usr_name'];
             $emailHTML = '<html>
 			<head><title>Lost password</title></head>
 			<body>
@@ -36,7 +37,7 @@ if (!empty($_POST)) {
 			</html>';
             $emailText = 'Go here : http://localhost/projetMyNy/signup.php?token='.$token;
             if (autoMail($email, $emailHTML, $emailText)) {
-                $message = 'Email pour restaurer le mot de passe envoyé à '.$email;
+                $message = 'Email pour restaurer le mot de passe envoyé à '.$user;
                 writeLog($message);
                 $send = true;
                 $addToken = '
@@ -46,14 +47,14 @@ if (!empty($_POST)) {
                 $pdoStatement -> bindvalue(':token', $token, PDO::PARAM_STR);
                 $pdoStatement -> bindvalue(':email', $email, PDO::PARAM_STR);
                 if ($pdoStatement -> execute() && $pdoStatement -> rowCount() > 0) {
-                    $message = 'token ajouté à '.$email;
+                    $message = 'token ajouté à '.$user;
                     writeLog($message);
                 } else {
-                    $message = 'token ne pouvez pas être ajouter à '.$email;
+                    $message = 'token ne pouvez pas être ajouter à '.$user;
                     writeLog($message);
                 }
             } else {
-                $message = 'Email ne pouvez pas être envoyer à '.$email;
+                $message = 'Email ne pouvez pas être envoyer à '.$user;
                 writeLog($message);
                 $failure = true;
             }
