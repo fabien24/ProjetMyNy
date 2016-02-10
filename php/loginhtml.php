@@ -3,7 +3,7 @@
         <input type="email" name="email" placeholder="E-mail" ><br />
         <input type="password" name="password" placeholder="Password"><br />
         <input class="submit" type="submit" value="Log in">
-        <a href="">Lost password</a><br />
+        <a href="lostpassword.php">Lost password</a><br />
         <label>
             <?php // gestion des erreures 
             if (!$emailFilled) {
