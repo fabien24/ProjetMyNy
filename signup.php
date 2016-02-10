@@ -58,7 +58,6 @@ if (!empty($_POST)) {
 		                $pdoStatement -> bindvalue(':email', $userEmail, PDO::PARAM_STR);
 		                if ($pdoStatement -> execute() && $pdoStatement -> rowCount() > 0) {
 		                    //changement du mot de passe enregistré dans le log
-		                    $time = date('d/m/Y, H:i:s').' =>';
 		                    $message = 'The user '.$username.' entered a new password and got his token removed';
 		                    writeLog($message);
 		                    $_SESSION['password'] = $securePassword;
