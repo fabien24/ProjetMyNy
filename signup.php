@@ -65,7 +65,7 @@ if (!empty($_POST)) {
 		                    $_SESSION['username'] = $username;
 		                    header('Location: index.php');
 		                }
-		            } else {
+		            } else {// les erreurs
 		                $pwConfirmation = false;
 		            }
 		        } else {
@@ -144,7 +144,7 @@ if (!empty($_POST)) {
                 </form>
             </div>    
 <?php
-        // S'il y a un problème avec le token on affiche un erreur
+        // S'il y a un problème avec le token on affiche une erreur
         } else {
 ?>
         <div class="error">
