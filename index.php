@@ -8,7 +8,7 @@
 		$allLocations = $pdo->query('SELECT sit_id, sit_name, sit_latitude, sit_longitude, typ_name
 			FROM site INNER JOIN type
 			ON site.typ_id = type.typ_id');
-		$lastAddedLocations = $pdo->query('SELECT sit_id, sit_name, ROUND((5*sit_rating5+4*sit_rating4+3*sit_rating3+2*sit_rating2+sit_rating1)/(sit_rating5+sit_rating4+sit_rating3+sit_rating2+sit_rating1),1) AS sit_rating, LEFT(sit_description, 150) AS sit_short_description, LENGTH(sit_description) AS sit_description_length, typ_name
+		$lastAddedLocations = $pdo->query('SELECT sit_id, sit_name, ROUND((5*sit_rating5+4*sit_rating4+3*sit_rating3+2*sit_rating2+sit_rating1)/(sit_rating5+sit_rating4+sit_rating3+sit_rating2+sit_rating1),1) AS sit_rating, LEFT(sit_description, 150) AS sit_short_description, LENGTH(sit_description) AS sit_description_length, sit_image_path, typ_name
 			FROM site INNER JOIN type
 			ON site.typ_id = type.typ_id
 			WHERE sit_rating5+sit_rating4+sit_rating3+sit_rating2+sit_rating1 != 0
@@ -47,12 +47,17 @@
 			</script>
 		</section>
 		<section id="slider"><?php
-			// Slider .hidden on mobile devices
-		?></section>
+			// Slider hidden on mobile devices
+			?><ul>
+				<li>My slide</li>
+				<li>Another slide</li>
+				<li>My last slide</li>
+			</ul>
+		</section>
 		<section id="locations"><?php
 			// locations list 2 per row (1 on mobile device)
 			foreach ($lastAddedLocations as $location) {
-				?><div class="oneLocation">
+				?><div class="oneLocation" style="background-image: url('<?= $location['sit_image_path']; ?>');">
 					<h2><a href="./location.php?id=<?= $location['sit_id'] ?>"><?= $location['sit_name']; ?></a></h2>
 					<div class="rating" style="width: <?= 30*intval($location['sit_rating']); ?>px;"></div>
 					<div class="type"><?= $location['typ_name'] ?></div>
@@ -60,7 +65,10 @@
 					<a href="./location.php?id=<?= $location['sit_id'] ?>">Read more…</a>
 				</div><?php
 			}
-		?></section><?php
+		?></section>
+		<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+		<script src="unslider/src/js/unslider.js"></script>
+		<script src="js/initslider.js"></script><?php
 	}
 	require_once 'php/footer.php';
 ?>
