@@ -444,6 +444,8 @@ section {
     border: 15px solid #FFF;
     min-height: 250px;
     margin-bottom: 20px;
+/*    text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.68);*/
+	text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.84);
 }
 
 .oneLocation:nth-child(even) {
@@ -498,5 +500,9 @@ section {
 
 #slider .oneLocation {
 	width: 100%;
+}
+
+#slider .oneLocation .description {
+	width: 500px;
 }
 
