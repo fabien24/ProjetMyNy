@@ -2,3 +2,17 @@
 renaud.ialacci@gmail.com got his role changed
 09/02/2016, 16:46:27 =>
 renaud.ialacci@gmail.com got his role changed
+10/02/2016, 11:40:09 =>
+The user fabien entered a new password and got his token removed
+10/02/2016, 11:41:09 =>
+fabe-s@hotmail.de has been added to the DB
+10/02/2016, 11:41:10 =>
+Email ne pouvez pas être envoyer à fabe-s@hotmail.de
+10/02/2016, 11:54:18 =>
+fabe-s@hotmail.de has been added to the DB
+10/02/2016, 11:54:21 =>
+Invitation envoyé par email à fabe-s@hotmail.de
+10/02/2016, 11:54:21 =>
+token ajouté à fabe-s@hotmail.de
+10/02/2016, 12:17:48 =>
+The user test entered a new password and got his token removed

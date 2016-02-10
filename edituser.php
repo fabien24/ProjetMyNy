@@ -1,5 +1,6 @@
 <?php
 require_once 'php/config.php';
+require_once 'php/header.php';
 require_once 'php/loginphp.php';
 $userMail = '
     SELECT usr_email FROM user 
@@ -102,9 +103,7 @@ if (!$logged) {
         require_once 'php/loginhtml.php';
 } elseif (isset($_SESSION['role']) && $_SESSION['role'] == 4) {
 ?>  
-<?php
-    require_once 'php/header.php';
-?>
+
    <div id="usrScreen">
         <form action="" method="post">
             <input type="email" name="add" placeholder="Your friends email"><br/>
